@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.light-navbar{
+    background-color: #2a3c56;
+    color: #f6f6f6;
+}
+
+.dark-navbar{
+    background-color: #292929;
+    color: #f6f6f6;
+}
+
+.light-background{
+    background-color: #f6f6f6;
+}
+
+.dark-background{
+    background-color: #060606;
+}
+
+.light-container{
+    color: #292929;
+    background-color: #fff;
+}
+
+.dark-container{
+    color: #f6f6f6;
+    background-color: #292929;
+}
+
+.sun{
+    color: rgb(213, 213, 71)
+}
+
+.cloud_rain{
+    color: rgb(122, 119, 119);
+}
+
+.cloud_sun{
+    color: rgb(47, 142, 142)
+}
+
+.size{
+    font-size:1.5em;
+}

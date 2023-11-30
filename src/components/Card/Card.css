@@ -1,0 +1,21 @@
+.cardDetails{
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.WeatherDetails{
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heart{
+    color: #A25772;
+}

@@ -1,11 +1,20 @@
-import './App.css';
-import Home from './components/Home/Home';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Navbar from './components/Navbar/Navbar';
+import { Provider } from 'react-redux';
+import store from './store';
+
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Navigation />
+      </Router>
+    </Provider>
   );
 }
 

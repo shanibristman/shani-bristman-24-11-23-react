@@ -1,0 +1,26 @@
+.all_cart{
+    display: flex;
+    align-items:center;
+    height: 100vh;
+    padding: 15px;
+    flex-direction: column;
+}
+.fav-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.ticket{
+    width: 300px;
+    margin: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+}
+
+.saved{
+    padding-bottom: 10px;
+}
