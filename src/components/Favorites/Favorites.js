@@ -24,7 +24,7 @@ export default function Favorites() {
 
     return (
         <div className={`all_cart ${darkMode ? 'dark-background' : 'light-background'}`}>
-            <div>MT FAVORITES :</div>
+            <div className={`${darkMode ? 'color-d' : 'color-l'}`}>MT FAVORITES :</div>
             <div className='fav-list'>
                 {favoritesCart && favoritesCart.map(item => (
                     <div key={item.id} className={`ticket ${darkMode ? 'dark-container' : 'light-container'}`} onClick={() => goToHomePage(item.id, item.city)}>
