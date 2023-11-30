@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const API_KEY = 'GevAS1AAdErEBrfFTPJF1SteZnctlINW'
 
@@ -9,15 +10,21 @@ export const fetchSearchData = createAsyncThunk('data/searchData', async (text) 
     return data;
 })
 
+// export const fetchCurrent = createAsyncThunk('data/fetchCurrent', async (_, thunkAPI) => {
+
+//     const { currentKey } = thunkAPI.getState().data
+
+//     const res = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${currentKey}?apikey=${API_KEY}`);
+//     const data = await res.json();
+
+//     return data;
+// })
+
 export const fetchCurrent = createAsyncThunk('data/fetchCurrent', async (_, thunkAPI) => {
-
-    const { currentKey } = thunkAPI.getState().data
-
-    const res = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${currentKey}?apikey=${API_KEY}`);
-    const data = await res.json();
-
-    return data;
-})
+    const { currentKey } = thunkAPI.getState().data;
+    const response = await axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${currentKey}?apikey=${API_KEY}`);
+    return response.data;
+});
 
 export const fetchAllWeek = createAsyncThunk('data/fetchAllWeek', async (_, thunkAPI) => {
 
