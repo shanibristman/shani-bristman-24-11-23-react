@@ -15,8 +15,10 @@ export default function Search() {
     const [showList, SetShowList] = useState(false)
 
     const submitSearch = () => {
+
         dispatch(fetchSearchData(searchText));
         SetShowList(!showList)
+
     }
 
     const selectLocation = (key, city) => {
@@ -42,7 +44,7 @@ export default function Search() {
             {status === 'loading' && <p>Loading...</p>}
             {status === 'failed' && <p>{error}</p>}
             {status === 'succeeded'
-                && showList &&
+                && showList && searchText &&
                 (<div className={`list ${darkMode ? 'dark-container' : 'list-color-light'}`}>
                     {searchResults.map(item => (
                         <div key={item.Key} onClick={() => selectLocation(item.Key, item.LocalizedName)}>{item.LocalizedName}</div>
