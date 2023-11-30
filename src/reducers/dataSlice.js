@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const API_KEY = 'GevAS1AAdErEBrfFTPJF1SteZnctlINW'
 
 export const fetchSearchData = createAsyncThunk('data/searchData', async (text) => {
-    const res = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${text}`)
+    const res = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${text}`)
     const data = await res.json()
 
     return data;
@@ -13,7 +13,7 @@ export const fetchCurrent = createAsyncThunk('data/fetchCurrent', async (_, thun
 
     const { currentKey } = thunkAPI.getState().data
 
-    const res = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${currentKey}?apikey=${API_KEY}`);
+    const res = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${currentKey}?apikey=${API_KEY}`);
     const data = await res.json();
 
     return data;
@@ -23,7 +23,7 @@ export const fetchAllWeek = createAsyncThunk('data/fetchAllWeek', async (_, thun
 
     const { currentKey } = thunkAPI.getState().data
 
-    const res = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${currentKey}?apikey=${API_KEY}&metric=true`)
+    const res = await fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${currentKey}?apikey=${API_KEY}&metric=true`)
     const data = await res.json()
 
     return data;
